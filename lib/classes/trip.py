@@ -1,4 +1,5 @@
 class Trip:
+  all = []
   def __init__(self, visitor, national_park, start_date, end_date):
     self.visitor= visitor
     self.national_park = national_park
@@ -10,6 +11,8 @@ class Trip:
 
     self.national_park._trips.append(self)
     self.national_park._visitors.append(self.visitor)
+
+    Trip.all.append(self)
   
   @property
   def visitor(self):

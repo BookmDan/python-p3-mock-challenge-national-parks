@@ -1,9 +1,11 @@
 class NationalPark:
+  all = []
   def __init__(self, name):
     self.name = name 
     self._trips = []
     self._visitors = []
 
+    NationalPark.all.append(self)
   @property
   def name(self):
     return self._name
@@ -45,8 +47,20 @@ class NationalPark:
 
     # return max(visitor_frequencies, key = visitor_frequencies.get)
     return max(self._visitors, key=self._visitors.count)
-    
+  
+  @classmethod
+  def most_visited(cls):
+    curr_park = None 
+    curr_max_visits = 0 
 
+    for national_park in cls.all:
+      if len(national_park._trips) > curr_max_visits:
+        curr_park = national_park
+        curr_max_visits = len(national_park._trips)
+
+    return curr_park
+
+  
 
 # - `NationalPark __init__(self, name)`
 #   - NationalPark is initialized with a name, as a string
