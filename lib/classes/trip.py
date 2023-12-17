@@ -20,7 +20,7 @@ class Trip:
   
   @visitor.setter
   def visitor(self, visitor):
-    from classes.Visitor from Visitor
+    from classes.Visitor import Visitor
 
     if isinstance(visitor, Visitor):
       self._visitor = visitor
@@ -33,7 +33,7 @@ class Trip:
 
   @national_park.setter
   def national_park(self, national_park):
-    from classes.NationalPark import national_park
+    from classes.NationalPark import NationalPark
 
     if isinstance(national_park, NationalPark):
       self._national_park = national_park
